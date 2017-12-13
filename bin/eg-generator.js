@@ -46,15 +46,14 @@ module.exports = class EgGenerator extends Generator {
   // configuration defaults
   _wrapConfig (yargs) {
     return yargs
-      .boolean(['no-color', 'q', 'v'])
+      .boolean(['q', 'v'])
       .string(['H'])
-      .describe('no-color', 'Disable color in prompts')
       .alias('q', 'quiet')
       .describe('q', 'Only show major pieces of output')
       .describe('H', 'Header to send with each request to Express Gateway Admin API KEY:VALUE format')
       .alias('v', 'verbose')
       .describe('v', 'Verbose output, will show request to Admin API')
-      .group(['no-color', 'q'], 'Options:')
+      .group(['q'], 'Options:')
       .help('h');
   }
 
